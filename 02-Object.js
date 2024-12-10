@@ -3,6 +3,10 @@
 -Using an Object Literal
 -Using the new Keyword
 -Using an Object Constructor
+-Using Object.assign()
+-Using Object.create()
+-Using Object.fromEntries()
+
 # Objects are mutable: They are addressed by reference, not by value.
 */
 
@@ -62,6 +66,10 @@ function objectMethods(obj) {
 //   let newObj = Object.assign({}, obj, { newProperty: "newValue" });
 //   console.log("After Object.assign():", newObj);
 
+//   let newObj2 = Object.create(obj);
+//   console.log("After Object.create()", newObj2);
+//   console.log("Prototype of newObj2:", Object.getPrototypeOf(newObj2));
+//   console.log("Accessing inherited property key1:", newObj2.key1);
 
 }
 
