@@ -57,12 +57,14 @@ function objectMethods(obj) {
 //   let values = Object.values(obj);
 //   console.log("After Object.values():", values);
 
+     // returns an array of the key/value pairs in an object
 //   let entries = Object.entries(obj);
 //   console.log("After Object.entries():", entries);
 
 //   let hasProp = obj.hasOwnProperty("property");
 //   console.log("After hasOwnProperty():", hasProp);
 
+     // copies properties from one or more source objects to a target object
 //   let newObj = Object.assign({}, obj, { newProperty: "newValue" });
 //   console.log("After Object.assign():", newObj);
 
