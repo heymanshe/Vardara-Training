@@ -65,3 +65,10 @@ for (let x of language) {
     result += x + "\n"
 }
 console.log(result);
+
+
+// for-in: When working with objects (not arrays) to get property names (keys).
+// for-of: When you need to iterate over values in arrays, strings, sets, etc.
+// forEach(): When you want to perform side effects (e.g., logging, modifying external variables) on each element of an array.
+// for: When you need full control over iteration, including the ability to use break, continue, or modify the loop index.
+// while/do-while: When the number of iterations is not known beforehand and you need to repeat code while a condition is true.
