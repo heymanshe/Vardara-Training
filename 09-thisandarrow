@@ -1,0 +1,87 @@
+//############################### this keyword #############################################
+
+/*
+In an object method, this refers to the object.
+Alone, this refers to the global object.
+In a function, this refers to the global object.
+In a function, in strict mode, this is undefined.
+In an event, this refers to the element that received the event.
+Methods like call(), apply(), and bind() can refer this to any object.
+
+
+
+
+In regular functions the this keyword represented the object that called the function, 
+which could be the window, the document, a button or whatever.
+With arrow functions the this keyword always represents the object that defined the arrow function.
+*/
+
+
+
+
+console.log(this)
+
+// this refers to the object that is currently calling the fucntion.
+
+var age = 28;
+
+function displayAge() {
+    console.log(age);
+    console.log(this);
+}
+
+displayAge();
+//or 
+window.displayAge(); // this refers to the window object
+
+var person = {
+    age: 26,
+    displayAge: displayAge,
+    nestedPerson: {
+        age: 25,
+        displayAge: displayAge,
+    }
+}
+
+person.displayAge(); // this refers to the person object
+person.nestedPerson.displayAge(); //this refers to the nested object
+
+
+// Scope of the fucntion depends where function is definded
+// the value of "this" is determined by how a function is called (runtime binding)
+
+
+// "this" with arrow  and regular function
+
+var person1 = {
+    age: 28,
+    greet1: function() {
+        console.log("Greet 1", this.age);
+        console.log("Greet 1", this);
+        function greet2() {  // refers to window object
+            console.log("Greet 2", this.age);
+            console.log("Greet 2", this);
+        }
+        greet2(); // calling it without any explicity binding that's why it refers to window object
+    }
+}
+
+person1.greet1();
+
+
+var person2 = {
+    age: 23,
+    greet3: function() {
+        console.log("Greet 3", this.age);
+        console.log("Greet 4", this);
+        const greet4 = () => {
+            console.log("Greet 4", this.age); 
+            console.log("Greet 4", this);
+        }
+        greet4(); // here it refers to the person2 object
+    }
+}
+
+person2.greet3();
+
+// "this" in ()=> based on the scope the Arrow function is defined within
